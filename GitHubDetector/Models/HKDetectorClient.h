@@ -27,4 +27,10 @@ typedef enum {
                successCallback: (void (^)(NSString *accessToken)) successCallback
                failureCallback: (void (^)(NSError *error)) failureCallback;
 
+- (void) postCheckinWithText: (NSString *) text
+                  atLatitude: (CGFloat) latitude
+                   longitude: (CGFloat) longitude
+             successCallback: (void (^)()) successCallback
+             failureCallback: (void (^)(NSError *error)) failureCallback;
+
 @end
