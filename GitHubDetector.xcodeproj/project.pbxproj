@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5253DC1114E471DB00257453 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253DC1014E471DB00257453 /* MapKit.framework */; };
 		52D2B34014E4527A00855A1F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D2B33F14E4527A00855A1F /* MapViewController.m */; };
 		80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7822514E451B50008E31D /* HKCompassGeekView.m */; };
 		A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B50F414E45810009C0BB0 /* HKDetectorClient.m */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5253DC1014E471DB00257453 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		52D2B33E14E4527A00855A1F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		52D2B33F14E4527A00855A1F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		80A7822414E451B40008E31D /* HKCompassGeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKCompassGeekView.h; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5253DC1114E471DB00257453 /* MapKit.framework in Frameworks */,
 				A278843614E44A7800D0476B /* CoreLocation.framework in Frameworks */,
 				A278841814E4480400D0476B /* UIKit.framework in Frameworks */,
 				A278841A14E4480400D0476B /* Foundation.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		A278841614E4480400D0476B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5253DC1014E471DB00257453 /* MapKit.framework */,
 				A278843514E44A7800D0476B /* CoreLocation.framework */,
 				A278841714E4480400D0476B /* UIKit.framework */,
 				A278841914E4480400D0476B /* Foundation.framework */,
