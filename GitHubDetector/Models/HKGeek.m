@@ -18,6 +18,14 @@
 @synthesize gravatarURL = _gravatarURL;
 @synthesize checkIns = _checkIns;
 
++ (HKGeek *)geekForLogin:(NSString *)login
+{
+    // TODO: should look for geeks in an NSSet
+    HKGeek *newGeek = [[HKGeek alloc] init];
+    newGeek.login = login;
+    return newGeek;
+}
+
 - (id)init
 {
     if (self = [super init]) {

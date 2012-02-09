@@ -16,6 +16,7 @@
 @property (nonatomic, readwrite, strong) NSString *gravatarURL;
 @property (nonatomic, readonly, strong) NSMutableArray *checkIns;
 
++ (HKGeek *)geekForLogin:(NSString *)login;
 - (HKCheckIn *)lastCheckIn;
 
 @end
