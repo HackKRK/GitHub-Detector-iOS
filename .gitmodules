@@ -1,6 +1,6 @@
 [submodule "extern/AFNetworking.git"]
 	path = extern/AFNetworking.git
-	url = https://github.com/AFNetworking/AFNetworking.git
+	url = git://github.com/AFNetworking/AFNetworking.git
 [submodule "extern/JSONKit"]
 	path = extern/JSONKit
-	url = https://github.com/johnezang/JSONKit.git
+	url = git://github.com/johnezang/JSONKit.git
