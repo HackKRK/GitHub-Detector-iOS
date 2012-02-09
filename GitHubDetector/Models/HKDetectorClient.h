@@ -33,4 +33,15 @@ typedef enum {
              successCallback: (void (^)()) successCallback
              failureCallback: (void (^)(NSError *error)) failureCallback;
 
+- (void) findGeeksAtLatitude: (CGFloat) latitude
+                   longitude: (CGFloat) longitude
+             successCallback: (void (^)(NSArray *geeks)) successCallback
+             failureCallback: (void (^)(NSError *error)) failureCallback;
+
+- (void) findGeeksAtLatitude: (CGFloat) latitude
+                   longitude: (CGFloat) longitude
+                    inRadius: (CGFloat) radius
+             successCallback: (void (^)(NSArray *geeks)) successCallback
+             failureCallback: (void (^)(NSError *error)) failureCallback;
+
 @end

@@ -6,10 +6,12 @@
 //  Copyright (c) 2012 HackKrk. All rights reserved.
 //
 
+#import "HKCheckIn.h"
 #import "HKDetectorClient.h"
 
 static NSString *HKDetectorClientAccessToken = @"HKDetectorClientAccessToken";
 static NSDictionary *apiURLs;
+static CGFloat defaultRadius = 10.0;
 
 @implementation HKDetectorClient
 
@@ -43,6 +45,10 @@ static NSDictionary *apiURLs;
   }
 }
 
+- (void) setTokenHeader {
+  [self setDefaultHeader: @"X-Token" value: userToken];
+}
+
 - (BOOL) isAutenticated {
   if ([userToken length] > 0) {
     return YES;
@@ -57,6 +63,9 @@ static NSDictionary *apiURLs;
   self = [super initWithBaseURL: [NSURL URLWithString: url]];
   if (self) {
     [self loadToken];
+    if ([self isAutenticated]) {
+      [self setTokenHeader];
+    }
   }
   return self;
 }
@@ -72,6 +81,7 @@ static NSDictionary *apiURLs;
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
       userToken = [JSON objectForKey: @"token"];
+      [self setTokenHeader];
       successCallback(userToken);
     }
     failure: ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
@@ -94,7 +104,6 @@ static NSDictionary *apiURLs;
                           nil];
 
   NSMutableURLRequest *request = [self requestWithMethod: @"POST" path: @"/checkin" parameters: params];
-  [request addValue: userToken forHTTPHeaderField: @"X-Token"];
 
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -105,6 +114,49 @@ static NSDictionary *apiURLs;
     }
   ];
   [operation start];
+}
+
+- (void) findGeeksAtLatitude: (CGFloat) latitude
+                   longitude: (CGFloat) longitude
+             successCallback: (void (^)(NSArray *geeks)) successCallback
+             failureCallback: (void (^)(NSError *error)) failureCallback {
+
+  [self findGeeksAtLatitude: latitude
+                  longitude: longitude
+                   inRadius: defaultRadius
+            successCallback: successCallback
+            failureCallback: failureCallback];
+}
+
+- (void) findGeeksAtLatitude: (CGFloat) latitude
+                   longitude: (CGFloat) longitude
+                    inRadius: (CGFloat) radius
+             successCallback: (void (^)(NSArray *geeks)) successCallback
+             failureCallback: (void (^)(NSError *error)) failureCallback {
+
+  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [NSNumber numberWithFloat: latitude], @"latitude",
+                          [NSNumber numberWithFloat: longitude], @"longitude",
+                          [NSNumber numberWithFloat: radius], @"radius",
+                          nil];
+
+  NSMutableURLRequest *request = [self requestWithMethod: @"GET" path: @"/geeks" parameters: params];
+
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
+    success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+      NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity: [JSON count]];
+      for (NSDictionary *jsonRecord in JSON) {
+        HKCheckIn *checkin = [[HKCheckIn alloc] initFromJSON: jsonRecord];
+        [objects addObject: checkin];
+      }
+      successCallback(objects);
+    }
+    failure: ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+      failureCallback(error);
+    }
+  ];
+  [operation start];
+
 }
 
 @end
