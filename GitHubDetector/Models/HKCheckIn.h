@@ -21,7 +21,8 @@
 @property (nonatomic, readwrite, strong) CLLocation *location;
 @property (nonatomic, readwrite, strong) NSString *message;
 
-- (id)initFromJSON:(NSDictionary *)json;
++ (HKGeek *)checkInFromJSON:(NSDictionary *)json;
+- (id)initFromJSON:(NSDictionary *)json __attribute__((deprecated));
 - (NSComparisonResult)compareDate:(HKCheckIn *)aCheckIn;
 
 @end

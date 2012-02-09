@@ -9,7 +9,8 @@
 #import "HKGeek.h"
 
 @interface HKGeek () // Private
-+ (NSMutableSet *)geeks;
++ (NSMutableSet *)_geeks;
+- (id)_initFromJSON:(NSDictionary *)json;
 @property (nonatomic, readwrite, strong) NSMutableArray *checkIns;
 @end
 
@@ -19,7 +20,7 @@
 @synthesize gravatarURL = _gravatarURL;
 @synthesize checkIns = _checkIns;
 
-+ (NSMutableSet *)geeks
++ (NSMutableSet *)_geeks
 {
     static NSMutableSet *geeks = nil;
     if (geeks == nil)
@@ -29,34 +30,42 @@
     return geeks;
 }
 
-+ (HKGeek *)geekForLogin:(NSString *)login
++ (HKGeek *)geekFromJSON:(NSDictionary *)json
 {
-    NSSet *results = [[self geeks] objectsPassingTest:^ BOOL (HKGeek *geek, BOOL *stop)
-                      {
-                          if ([geek.login caseInsensitiveCompare:login] == NSOrderedSame)
-                          {
-                              *stop = YES;
-                              return YES;
-                          }
-                          return NO;
-                      }];
+    HKGeek *newGeek = [[HKGeek alloc] _initFromJSON:json];
+    HKGeek *existingGeek = [[self _geeks] member:newGeek];
     
-    if ([results count] > 0)
+    if (existingGeek != nil)
     {
-        return [results anyObject];
+        return existingGeek;
     }
     else
     {
-        HKGeek *newGeek = [[HKGeek alloc] init];
-        newGeek.login = login;
+        [[self _geeks] addObject:newGeek];
         return newGeek;
     }
 }
 
-- (id)init
+- (BOOL)isEqual:(HKGeek *)otherGeek
 {
-    if (self = [super init]) {
-        self.checkIns = [NSMutableArray arrayWithCapacity:4];
+    if ([otherGeek isKindOfClass:[HKGeek class]] && [otherGeek.login caseInsensitiveCompare:self.login] == NSOrderedSame)
+    {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSUInteger)hash
+{
+    return [self.login length];
+}
+
+- (id)_initFromJSON:(NSDictionary *)json
+{
+    if (self = [super init])
+    {
+        self.login = [json objectForKey:@"login"];
+        self.gravatarURL = [json objectForKey:@"avatar_url"];
     }
     return self;
 }

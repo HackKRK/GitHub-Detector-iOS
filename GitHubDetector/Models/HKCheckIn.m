@@ -11,6 +11,8 @@
 #import "HKGeek.h"
 
 @interface HKCheckIn () // Private
+- (id)_initFromJSON:(NSDictionary *)json;
++ (NSMutableSet *)_checkIns;
 //@property (nonatomic, readwrite, strong) HKGeek *geek;
 //@property (nonatomic, readwrite, strong) CLLocation *location;
 //@property (nonatomic, readwrite, strong) NSString *message;
@@ -28,14 +30,43 @@
     return self.location.coordinate;
 }
 
++ (NSMutableSet *)_checkIns
+{
+    static NSMutableSet *checkIns = nil;
+    if (checkIns == nil)
+    {
+        checkIns = [[NSMutableSet alloc] initWithCapacity:64];
+    }
+    return checkIns;
+}
+
++ (HKCheckIn *)checkInFromJSON:(NSDictionary *)json
+{
+    HKCheckIn *newCheckIn = [[HKCheckIn alloc] _initFromJSON:json];
+    HKCheckIn *existingCheckIn = [[self _checkIns] member:newCheckIn];
+    
+    if (existingCheckIn != nil)
+    {
+        return existingCheckIn;
+    }
+    else
+    {
+        [[self _checkIns] addObject:newCheckIn];
+        return newCheckIn;
+    }
+}
+
 - (id)initFromJSON:(NSDictionary *)json
+{
+    return [self _initFromJSON:json];
+}
+
+- (id)_initFromJSON:(NSDictionary *)json;
 {
     if (self = [super init])
     {
         // geek
-        HKGeek *geek = [HKGeek geekForLogin:[json objectForKey:@"login"]];
-        geek.gravatarURL = [json objectForKey:@"avatar_url"];
-        self.geek = geek;
+        self.geek = [HKGeek geekFromJSON:json];
         
         // msg
         self.message = [json objectForKey:@"text"];
@@ -52,6 +83,20 @@
                                                      timestamp:timestamp];
     }
     return self;
+}
+
+- (BOOL)isEqual:(HKCheckIn *)otherCheckIn
+{
+    if ([otherCheckIn isKindOfClass:[HKCheckIn class]] && [otherCheckIn.location.timestamp isEqualToDate:self.location.timestamp] == NSOrderedSame)
+    {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSUInteger)hash
+{
+    return [self.location.timestamp timeIntervalSince1970];
 }
 
 - (NSComparisonResult)compareDate:(HKCheckIn *)aCheckIn
