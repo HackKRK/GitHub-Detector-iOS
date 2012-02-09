@@ -17,9 +17,9 @@
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
-@property (nonatomic, readonly, strong) HKGeek *geek;
-@property (nonatomic, readonly, strong) CLLocation *location;
-@property (nonatomic, readonly, strong) NSString *message;
+@property (nonatomic, readwrite, strong) HKGeek *geek;
+@property (nonatomic, readwrite, strong) CLLocation *location;
+@property (nonatomic, readwrite, strong) NSString *message;
 
 - (id)initFromJSON:(NSDictionary *)json;
 - (NSComparisonResult)compareDate:(HKCheckIn *)aCheckIn;

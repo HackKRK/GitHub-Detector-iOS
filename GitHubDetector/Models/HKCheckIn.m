@@ -11,9 +11,9 @@
 #import "HKGeek.h"
 
 @interface HKCheckIn () // Private
-@property (nonatomic, readwrite, strong) HKGeek *geek;
-@property (nonatomic, readwrite, strong) CLLocation *location;
-@property (nonatomic, readwrite, strong) NSString *message;
+//@property (nonatomic, readwrite, strong) HKGeek *geek;
+//@property (nonatomic, readwrite, strong) CLLocation *location;
+//@property (nonatomic, readwrite, strong) NSString *message;
 @end
 
 @implementation HKCheckIn

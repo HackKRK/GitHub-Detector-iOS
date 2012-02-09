@@ -9,6 +9,7 @@
 #import "HKGeek.h"
 
 @interface HKGeek () // Private
++ (NSMutableSet *)geeks;
 @property (nonatomic, readwrite, strong) NSMutableArray *checkIns;
 @end
 
@@ -18,12 +19,38 @@
 @synthesize gravatarURL = _gravatarURL;
 @synthesize checkIns = _checkIns;
 
++ (NSMutableSet *)geeks
+{
+    static NSMutableSet *geeks = nil;
+    if (geeks == nil)
+    {
+        geeks = [[NSMutableSet alloc] initWithCapacity:16];
+    }
+    return geeks;
+}
+
 + (HKGeek *)geekForLogin:(NSString *)login
 {
-    // TODO: should look for geeks in an NSSet
-    HKGeek *newGeek = [[HKGeek alloc] init];
-    newGeek.login = login;
-    return newGeek;
+    NSSet *results = [[self geeks] objectsPassingTest:^ BOOL (HKGeek *geek, BOOL *stop)
+                      {
+                          if ([geek.login caseInsensitiveCompare:login] == NSOrderedSame)
+                          {
+                              *stop = YES;
+                              return YES;
+                          }
+                          return NO;
+                      }];
+    
+    if ([results count] > 0)
+    {
+        return [results anyObject];
+    }
+    else
+    {
+        HKGeek *newGeek = [[HKGeek alloc] init];
+        newGeek.login = login;
+        return newGeek;
+    }
 }
 
 - (id)init
