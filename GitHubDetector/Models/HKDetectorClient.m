@@ -28,7 +28,7 @@ static CGFloat defaultRadius = 10.0;
 + (void) initialize {
   apiURLs = [NSDictionary dictionaryWithObjectsAndKeys:
              @"http://api.com", [NSNumber numberWithInt: RubyApi],
-             @"http://10.0.1.51:8000", [NSNumber numberWithInt: PythonApi],
+             @"http://10.0.1.61:8000", [NSNumber numberWithInt: PythonApi],
              nil];
 }
 
