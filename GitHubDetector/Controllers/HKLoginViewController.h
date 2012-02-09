@@ -12,6 +12,7 @@
 
 @property (nonatomic, readwrite, strong) IBOutlet UITextField *loginField;
 @property (nonatomic, readwrite, strong) IBOutlet UITextField *passwordField;
+@property (nonatomic, readwrite, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)login:(id)sender;
 
