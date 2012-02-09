@@ -10,6 +10,8 @@
 #import "GeoCoordinate.h"
 #import <QuartzCore/QuartzCore.h>
 
+NSComparisonResult AngleSortASC(GeoCoordinate *s1, GeoCoordinate *s2, void *ignore);
+
 @interface HKCompassViewController()
 @property (nonatomic, readwrite, strong) UIView * pointsContainer;      /**< transparent view that is a container for geek views*/
 @property (nonatomic, assign) int pointsIndex;                          /**< current element index */
