@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		52D2B34014E4527A00855A1F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D2B33F14E4527A00855A1F /* MapViewController.m */; };
 		80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7822514E451B50008E31D /* HKCompassGeekView.m */; };
+		A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B50F414E45810009C0BB0 /* HKDetectorClient.m */; };
 		A278841814E4480400D0476B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841714E4480400D0476B /* UIKit.framework */; };
 		A278841A14E4480400D0476B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841914E4480400D0476B /* Foundation.framework */; };
 		A278841C14E4480400D0476B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841B14E4480400D0476B /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 		52D2B33F14E4527A00855A1F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		80A7822414E451B40008E31D /* HKCompassGeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKCompassGeekView.h; sourceTree = "<group>"; };
 		80A7822514E451B50008E31D /* HKCompassGeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKCompassGeekView.m; sourceTree = "<group>"; };
+		A20B50F314E45810009C0BB0 /* HKDetectorClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKDetectorClient.h; path = Models/HKDetectorClient.h; sourceTree = "<group>"; };
+		A20B50F414E45810009C0BB0 /* HKDetectorClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKDetectorClient.m; path = Models/HKDetectorClient.m; sourceTree = "<group>"; };
 		A278841314E4480400D0476B /* GitHubDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A278841714E4480400D0476B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A278841914E4480400D0476B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,6 +170,8 @@
 				A278843014E449E700D0476B /* HKGeek.m */,
 				A278843214E44A6400D0476B /* HKCheckIn.h */,
 				A278843314E44A6400D0476B /* HKCheckIn.m */,
+				A20B50F314E45810009C0BB0 /* HKDetectorClient.h */,
+				A20B50F414E45810009C0BB0 /* HKDetectorClient.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				A278845E14E44DEC00D0476B /* HKLoginViewController.m in Sources */,
 				52D2B34014E4527A00855A1F /* MapViewController.m in Sources */,
 				80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */,
+				A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

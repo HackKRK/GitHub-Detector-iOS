@@ -7,6 +7,7 @@
 //
 
 #import "HKLoginViewController.h"
+#import "HKDetectorClient.h"
 
 @implementation HKLoginViewController
 
@@ -17,7 +18,19 @@
 - (IBAction)login:(id)sender
 {
     self.activityIndicator.hidden = NO;
-    // Pawel - how i can login? :p
+    [HKDetectorClient authenticateWithLogin:self.loginField.text
+                                   password:self.passwordField.text
+                            successCallback: ^ (NSString *token) {
+                                // ..
+                            }
+                            failureCallback: ^ (NSError *error) {
+                                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Can't login"
+                                                                             message:[error.userInfo objectForKey:NSLocalizedDescriptionKey]
+                                                                            delegate:nil
+                                                                   cancelButtonTitle:@"Dissmiss"
+                                                                   otherButtonTitles:nil];
+                                [av show];
+                            }];
 }
 
 @end
