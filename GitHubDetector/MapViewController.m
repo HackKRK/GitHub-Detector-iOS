@@ -22,16 +22,6 @@
     return self;
 }
 
-<<<<<<< HEAD
-=======
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
->>>>>>> 0c17294dc25750f9cd4a232521332e1267861cd3
 
 #pragma mark - View lifecycle
 
@@ -44,10 +34,6 @@
 -(void) setLocations:(NSArray *)_locations {
     
     locations = _locations;
-    
-    for (HKCheckIn *check in _locations) {
-        
-    }
     
     for (id<MKAnnotation> annotation  in mapView.annotations) {
         [mapView removeAnnotation:annotation];

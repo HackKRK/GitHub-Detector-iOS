@@ -17,4 +17,6 @@
 @property (nonatomic, readwrite, strong) CLLocation *location;
 @property (nonatomic, readwrite, strong) NSString *message;
 
+-(CLLocationCoordinate2D) location;
+
 @end

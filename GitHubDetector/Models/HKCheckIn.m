@@ -7,7 +7,7 @@
 //
 
 #import "HKCheckIn.h"
-#import "MKAnnotetion"
+#import <MapKit/MKAnnotation.h>
 
 @implementation HKCheckIn
 @synthesize coordinate;
@@ -16,11 +16,8 @@
 @synthesize message = _message;
 
 
--(void) setLocation:(CLLocation *)_location {
-    location = _location;
-    coordinate = location.location;
-    
-    
+-(CLLocationCoordinate2D) coordinate {
+     return _location.coordinate;
 }
 
 @end
