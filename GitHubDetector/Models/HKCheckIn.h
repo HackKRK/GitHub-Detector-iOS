@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface HKCheckIn : NSObject
+@interface HKCheckIn : NSObject {
+    CLLocationCoordinate2D coordinate;
+}
 
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, readwrite, strong) CLLocation *location;
 @property (nonatomic, readwrite, strong) NSString *message;
 

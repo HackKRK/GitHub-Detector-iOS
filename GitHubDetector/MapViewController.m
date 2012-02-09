@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-
+#import "HKCheckIn.h"
 
 @implementation MapViewController
 @synthesize locations;
@@ -22,21 +22,28 @@
     return self;
 }
 
--(void) dealloc {
-    [mapView release];
-    [super dealloc];
-}
 
 #pragma mark - View lifecycle
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    
     mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
     [self.view addSubview:mapView];
 }
 
-
+-(void) setLocations:(NSArray *)_locations {
+    
+    locations = _locations;
+    
+    for (HKCheckIn *check in _locations) {
+        
+    }
+    
+    for (id<MKAnnotation> annotation  in mapView.annotations) {
+        [mapView removeAnnotation:annotation];
+    }
+    
+    [mapView addAnnotations:locations];
+}
 
 @end
