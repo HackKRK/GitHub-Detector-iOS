@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52D2B34014E4527A00855A1F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D2B33F14E4527A00855A1F /* MapViewController.m */; };
 		A278841814E4480400D0476B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841714E4480400D0476B /* UIKit.framework */; };
 		A278841A14E4480400D0476B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841914E4480400D0476B /* Foundation.framework */; };
 		A278841C14E4480400D0476B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841B14E4480400D0476B /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52D2B33E14E4527A00855A1F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		52D2B33F14E4527A00855A1F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		A278841314E4480400D0476B /* GitHubDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A278841714E4480400D0476B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A278841914E4480400D0476B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,6 +207,8 @@
 			children = (
 				A278845C14E44DEC00D0476B /* HKLoginViewController.h */,
 				A278845D14E44DEC00D0476B /* HKLoginViewController.m */,
+				52D2B33E14E4527A00855A1F /* MapViewController.h */,
+				52D2B33F14E4527A00855A1F /* MapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				A278845414E44CC200D0476B /* AFXMLRequestOperation.m in Sources */,
 				A278845914E44D4000D0476B /* JSONKit.m in Sources */,
 				A278845E14E44DEC00D0476B /* HKLoginViewController.m in Sources */,
+				52D2B34014E4527A00855A1F /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +414,7 @@
 				A278842D14E4480400D0476B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
