@@ -14,4 +14,6 @@
 @property (nonatomic, readwrite, strong) CLLocation *location;
 @property (nonatomic, readwrite, strong) NSString *message;
 
+- (NSComparisonResult)compareDate:(HKCheckIn *)aCheckIn;
+
 @end

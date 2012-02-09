@@ -28,7 +28,9 @@
 
 - (HKCheckIn *)lastCheckIn
 {
-    return [self.checkIns lastObject]; // TODO: check dates here (sort)
+    NSMutableArray *sortedArray = [NSMutableArray arrayWithArray:self.checkIns];
+    [sortedArray sortUsingSelector:@selector(compare:)];
+    return [sortedArray lastObject]; // TODO: check dates here (sort)
 }
 
 @end
