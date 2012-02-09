@@ -11,6 +11,8 @@
 		52D2B34014E4527A00855A1F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D2B33F14E4527A00855A1F /* MapViewController.m */; };
 		80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7822514E451B50008E31D /* HKCompassGeekView.m */; };
 		A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B50F414E45810009C0BB0 /* HKDetectorClient.m */; };
+		80A7823114E455B10008E31D /* GeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823014E455B10008E31D /* GeoCoordinate.m */; };
+		80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823414E4560E0008E31D /* HKCompassViewController.m */; };
 		A278841814E4480400D0476B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841714E4480400D0476B /* UIKit.framework */; };
 		A278841A14E4480400D0476B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841914E4480400D0476B /* Foundation.framework */; };
 		A278841C14E4480400D0476B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841B14E4480400D0476B /* CoreGraphics.framework */; };
@@ -43,6 +45,10 @@
 		80A7822514E451B50008E31D /* HKCompassGeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKCompassGeekView.m; sourceTree = "<group>"; };
 		A20B50F314E45810009C0BB0 /* HKDetectorClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKDetectorClient.h; path = Models/HKDetectorClient.h; sourceTree = "<group>"; };
 		A20B50F414E45810009C0BB0 /* HKDetectorClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKDetectorClient.m; path = Models/HKDetectorClient.m; sourceTree = "<group>"; };
+		80A7822F14E455B10008E31D /* GeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoCoordinate.h; sourceTree = "<group>"; };
+		80A7823014E455B10008E31D /* GeoCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoCoordinate.m; sourceTree = "<group>"; };
+		80A7823314E4560E0008E31D /* HKCompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; name = HKCompassViewController.h; path = Controllers/HKCompassViewController.h; sourceTree = "<group>"; };
+		80A7823414E4560E0008E31D /* HKCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKCompassViewController.m; path = Controllers/HKCompassViewController.m; sourceTree = "<group>"; };
 		A278841314E4480400D0476B /* GitHubDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A278841714E4480400D0476B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A278841914E4480400D0476B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -183,6 +189,8 @@
 		A278843714E44BC600D0476B /* extern */ = {
 			isa = PBXGroup;
 			children = (
+				80A7822F14E455B10008E31D /* GeoCoordinate.h */,
+				80A7823014E455B10008E31D /* GeoCoordinate.m */,
 				A278845614E44D3200D0476B /* JSONKit */,
 				A278843814E44CB400D0476B /* AFNetworking */,
 			);
@@ -228,6 +236,8 @@
 		A278845A14E44DB300D0476B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				80A7823314E4560E0008E31D /* HKCompassViewController.h */,
+				80A7823414E4560E0008E31D /* HKCompassViewController.m */,
 				A278845C14E44DEC00D0476B /* HKLoginViewController.h */,
 				A278845D14E44DEC00D0476B /* HKLoginViewController.m */,
 				52D2B33E14E4527A00855A1F /* MapViewController.h */,
@@ -334,6 +344,8 @@
 				52D2B34014E4527A00855A1F /* MapViewController.m in Sources */,
 				80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */,
 				A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */,
+				80A7823114E455B10008E31D /* GeoCoordinate.m in Sources */,
+				80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
