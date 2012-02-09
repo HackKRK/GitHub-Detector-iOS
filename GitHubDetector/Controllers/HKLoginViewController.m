@@ -8,12 +8,14 @@
 
 #import "HKLoginViewController.h"
 #import "HKDetectorClient.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation HKLoginViewController
 
 @synthesize loginField = _loginField;
 @synthesize passwordField = _passwordField;
 @synthesize activityIndicator = _activityIndicator;
+@synthesize spiralBackground = _spiralBackground;
 
 - (IBAction)login:(id)sender
 {
@@ -49,6 +51,40 @@
     }
     
     return YES;
+}
+
+- (void)viewDidUnload {
+    [self setSpiralBackground:nil];
+    [super viewDidUnload];
+}
+
+#pragma mark Background animation, yay
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    CABasicAnimation* anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    [anim setDuration:15.0f];
+    [anim setAutoreverses:NO];
+    [anim setRepeatCount:NSIntegerMax];
+    [anim setFromValue:[NSNumber numberWithDouble:0.0f]];
+    [anim setToValue:[NSNumber numberWithDouble:(M_PI * 2.0f)]];
+    [[self.spiralBackground layer] addAnimation:anim forKey:@"my_rotation"];
+    
+//    [UIView animateWithDuration:3 delay:0 
+//                        options:UIViewAnimationOptionRepeat 
+//                     animations:^(void){
+//                         self.spiralBackground.transform = CGAffineTransformMakeRotation(M_PI * 1.0f);
+//                         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+//                         NSLog(@"should work");
+//                     }
+//                     completion:^(BOOL finished) {
+//                         [UIView animateWithDuration:3 animations:^(void) {
+//                            self.spiralBackground.transform = CGAffineTransformMakeRotation(M_PI * 1.0f);
+//                            [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+//                         }];
+//                     }];
+
 }
 
 @end

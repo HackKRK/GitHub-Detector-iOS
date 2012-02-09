@@ -12,6 +12,8 @@
 		80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7822514E451B50008E31D /* HKCompassGeekView.m */; };
 		80A7823114E455B10008E31D /* GeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823014E455B10008E31D /* GeoCoordinate.m */; };
 		80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823414E4560E0008E31D /* HKCompassViewController.m */; };
+		95A6B88814E48A3F00752178 /* spiral.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A6B88714E48A3F00752178 /* spiral.png */; };
+		95A6B88A14E4914100752178 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6B88914E4914000752178 /* QuartzCore.framework */; };
 		A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B50F414E45810009C0BB0 /* HKDetectorClient.m */; };
 		A278841814E4480400D0476B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841714E4480400D0476B /* UIKit.framework */; };
 		A278841A14E4480400D0476B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841914E4480400D0476B /* Foundation.framework */; };
@@ -47,6 +49,8 @@
 		80A7823014E455B10008E31D /* GeoCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoCoordinate.m; sourceTree = "<group>"; };
 		80A7823314E4560E0008E31D /* HKCompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKCompassViewController.h; path = Controllers/HKCompassViewController.h; sourceTree = "<group>"; };
 		80A7823414E4560E0008E31D /* HKCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKCompassViewController.m; path = Controllers/HKCompassViewController.m; sourceTree = "<group>"; };
+		95A6B88714E48A3F00752178 /* spiral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spiral.png; sourceTree = "<group>"; };
+		95A6B88914E4914000752178 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A20B50F314E45810009C0BB0 /* HKDetectorClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKDetectorClient.h; path = Models/HKDetectorClient.h; sourceTree = "<group>"; };
 		A20B50F414E45810009C0BB0 /* HKDetectorClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKDetectorClient.m; path = Models/HKDetectorClient.m; sourceTree = "<group>"; };
 		A278841314E4480400D0476B /* GitHubDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A6B88A14E4914100752178 /* QuartzCore.framework in Frameworks */,
 				5253DC1114E471DB00257453 /* MapKit.framework in Frameworks */,
 				A278843614E44A7800D0476B /* CoreLocation.framework in Frameworks */,
 				A278841814E4480400D0476B /* UIKit.framework in Frameworks */,
@@ -110,6 +115,7 @@
 		A278840814E4480400D0476B = {
 			isa = PBXGroup;
 			children = (
+				95A6B88914E4914000752178 /* QuartzCore.framework */,
 				A278841D14E4480400D0476B /* GitHubDetector */,
 				A278843714E44BC600D0476B /* extern */,
 				A278841614E4480400D0476B /* Frameworks */,
@@ -248,6 +254,7 @@
 		A278846114E451A300D0476B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				95A6B88714E48A3F00752178 /* spiral.png */,
 				A278846214E451AC00D0476B /* octocat.png */,
 			);
 			name = Images;
@@ -307,6 +314,7 @@
 				A278842214E4480400D0476B /* InfoPlist.strings in Resources */,
 				A278846014E44E1700D0476B /* HKLoginView.xib in Resources */,
 				A278846314E451AC00D0476B /* octocat.png in Resources */,
+				95A6B88814E48A3F00752178 /* spiral.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

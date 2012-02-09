@@ -14,6 +14,8 @@
 @property (nonatomic, readwrite, strong) IBOutlet UITextField *passwordField;
 @property (nonatomic, readwrite, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (strong, nonatomic) IBOutlet UIImageView *spiralBackground;
+
 - (IBAction)login:(id)sender;
 
 @end
