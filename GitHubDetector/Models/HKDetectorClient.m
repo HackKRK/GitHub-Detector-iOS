@@ -8,6 +8,7 @@
 
 #import "HKCheckIn.h"
 #import "HKDetectorClient.h"
+#import "JSONKit.h"
 
 static NSString *HKDetectorClientAccessToken = @"HKDetectorClientAccessToken";
 static NSDictionary *apiURLs;
@@ -68,7 +69,8 @@ static CGFloat defaultRadius = 10.0;
                failureCallback: (void (^)(NSError *error)) failureCallback {
 
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: login, @"login", password, @"password", nil];
-  NSURLRequest *request = [self requestWithMethod: @"POST" path: @"/login" parameters: params];
+  NSMutableURLRequest *request = [self requestWithMethod: @"POST" path: @"/login" parameters: nil];
+  [request setHTTPBody: [params JSONData]];
 
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -95,7 +97,8 @@ static CGFloat defaultRadius = 10.0;
                           text, @"text",
                           nil];
 
-  NSMutableURLRequest *request = [self requestWithMethod: @"POST" path: @"/checkin" parameters: params];
+  NSMutableURLRequest *request = [self requestWithMethod: @"POST" path: @"/checkin" parameters: nil];
+  [request setHTTPBody: [params JSONData]];
 
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
