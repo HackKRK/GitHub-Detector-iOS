@@ -3,7 +3,7 @@
 //  GitHubDetector
 //
 //  Created by Błażej Biesiada on 2/9/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 HackKrk. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

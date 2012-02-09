@@ -10,10 +10,11 @@
 
 @interface HKDetectorClient : NSObject
 
-+ (void)authenticateWithLogin:(NSString *)login
++ (HKDetectorClient *)sharedInstance;
+- (void)authenticateWithLogin:(NSString *)login
                      password:(NSString *)password
               successCallback:(void (^)(NSString *accessToken))successCallback
               failureCallback:(void (^)(NSError *error))failureCallback;
-+ (BOOL)isAutenticated;
+- (BOOL)isAutenticated;
 
 @end

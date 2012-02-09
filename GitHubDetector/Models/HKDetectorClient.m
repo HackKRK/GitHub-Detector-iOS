@@ -10,9 +10,34 @@
 
 static NSString *HKDetectorClientAccessToken = @"HKDetectorClientAccessToken";
 
+@interface HKDetectorClient () // Private
+@property (nonatomic, readwrite, strong) NSString *serverUrl;
+@end
+
 @implementation HKDetectorClient
 
-+ (BOOL)isAutenticated
+@synthesize serverUrl = _serverUrl;
+
++ (HKDetectorClient *)sharedInstance
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^ {
+        _sharedObject = [[self alloc] init];
+    });
+    return _sharedObject;
+}
+
+- (id)init
+{
+    if (self = [super init])
+    {
+        self.serverUrl = @"https://?";
+    }
+    return self;
+}
+
+- (BOOL)isAutenticated
 {
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:HKDetectorClientAccessToken];
     if ([token length] > 0)
@@ -25,7 +50,7 @@ static NSString *HKDetectorClientAccessToken = @"HKDetectorClientAccessToken";
     }
 }
 
-+ (void)authenticateWithLogin:(NSString *)login
+- (void)authenticateWithLogin:(NSString *)login
                      password:(NSString *)password
               successCallback:(void (^)(NSString *accessToken))successCallback
               failureCallback:(void (^)(NSError *error))failureCallback
