@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5253DC1114E471DB00257453 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253DC1014E471DB00257453 /* MapKit.framework */; };
-		52D2B34014E4527A00855A1F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D2B33F14E4527A00855A1F /* MapViewController.m */; };
 		80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7822514E451B50008E31D /* HKCompassGeekView.m */; };
 		80A7823114E455B10008E31D /* GeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823014E455B10008E31D /* GeoCoordinate.m */; };
 		80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823414E4560E0008E31D /* HKCompassViewController.m */; };
@@ -39,12 +38,12 @@
 		A278845E14E44DEC00D0476B /* HKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A278845D14E44DEC00D0476B /* HKLoginViewController.m */; };
 		A278846014E44E1700D0476B /* HKLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A278845F14E44E1700D0476B /* HKLoginView.xib */; };
 		A278846314E451AC00D0476B /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = A278846214E451AC00D0476B /* octocat.png */; };
+		A2DE6C9614E4928C00353664 /* HKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE6C9514E4928C00353664 /* HKMapView.m */; };
+		A2DE6C9A14E492B000353664 /* HKMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE6C9914E492B000353664 /* HKMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5253DC1014E471DB00257453 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		52D2B33E14E4527A00855A1F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		52D2B33F14E4527A00855A1F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		80A7822414E451B40008E31D /* HKCompassGeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKCompassGeekView.h; sourceTree = "<group>"; };
 		80A7822514E451B50008E31D /* HKCompassGeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKCompassGeekView.m; sourceTree = "<group>"; };
 		80A7822F14E455B10008E31D /* GeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoCoordinate.h; sourceTree = "<group>"; };
@@ -99,6 +98,10 @@
 		A278845D14E44DEC00D0476B /* HKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKLoginViewController.m; path = Controllers/HKLoginViewController.m; sourceTree = "<group>"; };
 		A278845F14E44E1700D0476B /* HKLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HKLoginView.xib; path = Views/HKLoginView.xib; sourceTree = "<group>"; };
 		A278846214E451AC00D0476B /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = octocat.png; path = Images/octocat.png; sourceTree = "<group>"; };
+		A2DE6C9414E4928C00353664 /* HKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKMapView.h; path = Views/HKMapView.h; sourceTree = "<group>"; };
+		A2DE6C9514E4928C00353664 /* HKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKMapView.m; path = Views/HKMapView.m; sourceTree = "<group>"; };
+		A2DE6C9814E492B000353664 /* HKMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKMapViewController.h; path = Controllers/HKMapViewController.h; sourceTree = "<group>"; };
+		A2DE6C9914E492B000353664 /* HKMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKMapViewController.m; path = Controllers/HKMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,12 +240,12 @@
 		A278845A14E44DB300D0476B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2DE6C9814E492B000353664 /* HKMapViewController.h */,
+				A2DE6C9914E492B000353664 /* HKMapViewController.m */,
 				80A7823314E4560E0008E31D /* HKCompassViewController.h */,
 				80A7823414E4560E0008E31D /* HKCompassViewController.m */,
 				A278845C14E44DEC00D0476B /* HKLoginViewController.h */,
 				A278845D14E44DEC00D0476B /* HKLoginViewController.m */,
-				52D2B33E14E4527A00855A1F /* MapViewController.h */,
-				52D2B33F14E4527A00855A1F /* MapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +253,8 @@
 		A278845B14E44DCC00D0476B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A2DE6C9414E4928C00353664 /* HKMapView.h */,
+				A2DE6C9514E4928C00353664 /* HKMapView.m */,
 				80A7822414E451B40008E31D /* HKCompassGeekView.h */,
 				80A7822514E451B50008E31D /* HKCompassGeekView.m */,
 				A278845F14E44E1700D0476B /* HKLoginView.xib */,
@@ -346,11 +351,12 @@
 				A278845414E44CC200D0476B /* AFXMLRequestOperation.m in Sources */,
 				A278845914E44D4000D0476B /* JSONKit.m in Sources */,
 				A278845E14E44DEC00D0476B /* HKLoginViewController.m in Sources */,
-				52D2B34014E4527A00855A1F /* MapViewController.m in Sources */,
 				80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */,
 				A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */,
 				80A7823114E455B10008E31D /* HKCompassGeekPoint.m in Sources */,
 				80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */,
+				A2DE6C9614E4928C00353664 /* HKMapView.m in Sources */,
+				A2DE6C9A14E492B000353664 /* HKMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
