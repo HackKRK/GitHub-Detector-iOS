@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class HKCheckIn;
+
 @interface HKGeek : NSObject
 
 @property (nonatomic, readwrite, strong) NSString *login;
 @property (nonatomic, readwrite, strong) NSString *gravatarURL;
 @property (nonatomic, readonly, strong) NSMutableArray *checkIns;
+
+- (HKCheckIn *)lastCheckIn;
 
 @end

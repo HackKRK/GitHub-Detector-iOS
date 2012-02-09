@@ -7,57 +7,30 @@
 //
 
 #import "HKLoginViewController.h"
+#import "HKDetectorClient.h"
 
 @implementation HKLoginViewController
 
 @synthesize loginField = _loginField;
 @synthesize passwordField = _passwordField;
+@synthesize activityIndicator = _activityIndicator;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (IBAction)login:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    self.activityIndicator.hidden = NO;
+    [HKDetectorClient authenticateWithLogin:self.loginField.text
+                                   password:self.passwordField.text
+                            successCallback: ^ (NSString *token) {
+                                // ..
+                            }
+                            failureCallback: ^ (NSError *error) {
+                                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Can't login"
+                                                                             message:[error.userInfo objectForKey:NSLocalizedDescriptionKey]
+                                                                            delegate:nil
+                                                                   cancelButtonTitle:@"Dissmiss"
+                                                                   otherButtonTitles:nil];
+                                [av show];
+                            }];
 }
 
 @end

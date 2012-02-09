@@ -8,10 +8,27 @@
 
 #import "HKGeek.h"
 
+@interface HKGeek () // Private
+@property (nonatomic, readwrite, strong) NSMutableArray *checkIns;
+@end
+
 @implementation HKGeek
 
 @synthesize login = _login;
 @synthesize gravatarURL = _gravatarURL;
 @synthesize checkIns = _checkIns;
+
+- (id)init
+{
+    if (self = [super init]) {
+        self.checkIns = [NSMutableArray arrayWithCapacity:4];
+    }
+    return self;
+}
+
+- (HKCheckIn *)lastCheckIn
+{
+    return [self.checkIns lastObject]; // TODO: check dates here (sort)
+}
 
 @end
