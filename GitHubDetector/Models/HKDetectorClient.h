@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HKDetectorClient : NSObject
+typedef enum {
+  RubyApi,
+  JavaApi
+} ApiType;
 
-+ (HKDetectorClient *)sharedInstance;
-- (void)authenticateWithLogin:(NSString *)login
-                     password:(NSString *)password
-              successCallback:(void (^)(NSString *accessToken))successCallback
-              failureCallback:(void (^)(NSError *error))failureCallback;
-- (BOOL)isAutenticated;
+@interface HKDetectorClient : AFHTTPClient
+
++ (HKDetectorClient *) sharedInstance;
+
+- (id) initWithApi: (ApiType) apiType;
+- (BOOL) isAutenticated;
+
+- (void) authenticateWithLogin: (NSString *) login
+                      password: (NSString *) password
+               successCallback: (void (^)(NSString *accessToken)) successCallback
+               failureCallback: (void (^)(NSError *error)) failureCallback;
 
 @end
