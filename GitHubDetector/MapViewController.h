@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MapKit/MKMapView.h>
 
 @interface MapViewController : UIViewController {
-    
+    MKMapView *mapView;
+    NSArray *locations;
 }
+
+@property (strong, nonatomic) NSArray *locations;
 
 @end
