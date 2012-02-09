@@ -1,0 +1,266 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A278841814E4480400D0476B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841714E4480400D0476B /* UIKit.framework */; };
+		A278841A14E4480400D0476B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841914E4480400D0476B /* Foundation.framework */; };
+		A278841C14E4480400D0476B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841B14E4480400D0476B /* CoreGraphics.framework */; };
+		A278842214E4480400D0476B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A278842014E4480400D0476B /* InfoPlist.strings */; };
+		A278842414E4480400D0476B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A278842314E4480400D0476B /* main.m */; };
+		A278842814E4480400D0476B /* HKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A278842714E4480400D0476B /* HKAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A278841314E4480400D0476B /* GitHubDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A278841714E4480400D0476B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A278841914E4480400D0476B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A278841B14E4480400D0476B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A278841F14E4480400D0476B /* GitHubDetector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GitHubDetector-Info.plist"; sourceTree = "<group>"; };
+		A278842114E4480400D0476B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A278842314E4480400D0476B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A278842514E4480400D0476B /* GitHubDetector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubDetector-Prefix.pch"; sourceTree = "<group>"; };
+		A278842614E4480400D0476B /* HKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKAppDelegate.h; sourceTree = "<group>"; };
+		A278842714E4480400D0476B /* HKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A278841014E4480400D0476B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A278841814E4480400D0476B /* UIKit.framework in Frameworks */,
+				A278841A14E4480400D0476B /* Foundation.framework in Frameworks */,
+				A278841C14E4480400D0476B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A278840814E4480400D0476B = {
+			isa = PBXGroup;
+			children = (
+				A278841D14E4480400D0476B /* GitHubDetector */,
+				A278841614E4480400D0476B /* Frameworks */,
+				A278841414E4480400D0476B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A278841414E4480400D0476B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A278841314E4480400D0476B /* GitHubDetector.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A278841614E4480400D0476B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A278841714E4480400D0476B /* UIKit.framework */,
+				A278841914E4480400D0476B /* Foundation.framework */,
+				A278841B14E4480400D0476B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A278841D14E4480400D0476B /* GitHubDetector */ = {
+			isa = PBXGroup;
+			children = (
+				A278842614E4480400D0476B /* HKAppDelegate.h */,
+				A278842714E4480400D0476B /* HKAppDelegate.m */,
+				A278841E14E4480400D0476B /* Supporting Files */,
+			);
+			path = GitHubDetector;
+			sourceTree = "<group>";
+		};
+		A278841E14E4480400D0476B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A278841F14E4480400D0476B /* GitHubDetector-Info.plist */,
+				A278842014E4480400D0476B /* InfoPlist.strings */,
+				A278842314E4480400D0476B /* main.m */,
+				A278842514E4480400D0476B /* GitHubDetector-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A278841214E4480400D0476B /* GitHubDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A278842B14E4480400D0476B /* Build configuration list for PBXNativeTarget "GitHubDetector" */;
+			buildPhases = (
+				A278840F14E4480400D0476B /* Sources */,
+				A278841014E4480400D0476B /* Frameworks */,
+				A278841114E4480400D0476B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GitHubDetector;
+			productName = GitHubDetector;
+			productReference = A278841314E4480400D0476B /* GitHubDetector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A278840A14E4480400D0476B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = HackKrk;
+			};
+			buildConfigurationList = A278840D14E4480400D0476B /* Build configuration list for PBXProject "GitHubDetector" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A278840814E4480400D0476B;
+			productRefGroup = A278841414E4480400D0476B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A278841214E4480400D0476B /* GitHubDetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A278841114E4480400D0476B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A278842214E4480400D0476B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A278840F14E4480400D0476B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A278842414E4480400D0476B /* main.m in Sources */,
+				A278842814E4480400D0476B /* HKAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A278842014E4480400D0476B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A278842114E4480400D0476B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A278842914E4480400D0476B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A278842A14E4480400D0476B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A278842C14E4480400D0476B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GitHubDetector/GitHubDetector-Prefix.pch";
+				INFOPLIST_FILE = "GitHubDetector/GitHubDetector-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A278842D14E4480400D0476B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GitHubDetector/GitHubDetector-Prefix.pch";
+				INFOPLIST_FILE = "GitHubDetector/GitHubDetector-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A278840D14E4480400D0476B /* Build configuration list for PBXProject "GitHubDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A278842914E4480400D0476B /* Debug */,
+				A278842A14E4480400D0476B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A278842B14E4480400D0476B /* Build configuration list for PBXNativeTarget "GitHubDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A278842C14E4480400D0476B /* Debug */,
+				A278842D14E4480400D0476B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A278840A14E4480400D0476B /* Project object */;
+}
