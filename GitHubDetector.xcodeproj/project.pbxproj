@@ -13,6 +13,9 @@
 		A278842214E4480400D0476B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A278842014E4480400D0476B /* InfoPlist.strings */; };
 		A278842414E4480400D0476B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A278842314E4480400D0476B /* main.m */; };
 		A278842814E4480400D0476B /* HKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A278842714E4480400D0476B /* HKAppDelegate.m */; };
+		A278843114E449E700D0476B /* HKGeek.m in Sources */ = {isa = PBXBuildFile; fileRef = A278843014E449E700D0476B /* HKGeek.m */; };
+		A278843414E44A6400D0476B /* HKCheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A278843314E44A6400D0476B /* HKCheckIn.m */; };
+		A278843614E44A7800D0476B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278843514E44A7800D0476B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		A278842514E4480400D0476B /* GitHubDetector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubDetector-Prefix.pch"; sourceTree = "<group>"; };
 		A278842614E4480400D0476B /* HKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKAppDelegate.h; sourceTree = "<group>"; };
 		A278842714E4480400D0476B /* HKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKAppDelegate.m; sourceTree = "<group>"; };
+		A278842F14E449E700D0476B /* HKGeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKGeek.h; path = Models/HKGeek.h; sourceTree = "<group>"; };
+		A278843014E449E700D0476B /* HKGeek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKGeek.m; path = Models/HKGeek.m; sourceTree = "<group>"; };
+		A278843214E44A6400D0476B /* HKCheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKCheckIn.h; path = Models/HKCheckIn.h; sourceTree = "<group>"; };
+		A278843314E44A6400D0476B /* HKCheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKCheckIn.m; path = Models/HKCheckIn.m; sourceTree = "<group>"; };
+		A278843514E44A7800D0476B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A278843614E44A7800D0476B /* CoreLocation.framework in Frameworks */,
 				A278841814E4480400D0476B /* UIKit.framework in Frameworks */,
 				A278841A14E4480400D0476B /* Foundation.framework in Frameworks */,
 				A278841C14E4480400D0476B /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +54,7 @@
 		A278840814E4480400D0476B = {
 			isa = PBXGroup;
 			children = (
+				A278843514E44A7800D0476B /* CoreLocation.framework */,
 				A278841D14E4480400D0476B /* GitHubDetector */,
 				A278841614E4480400D0476B /* Frameworks */,
 				A278841414E4480400D0476B /* Products */,
@@ -72,6 +82,7 @@
 		A278841D14E4480400D0476B /* GitHubDetector */ = {
 			isa = PBXGroup;
 			children = (
+				A278842E14E4496100D0476B /* Models */,
 				A278842614E4480400D0476B /* HKAppDelegate.h */,
 				A278842714E4480400D0476B /* HKAppDelegate.m */,
 				A278841E14E4480400D0476B /* Supporting Files */,
@@ -88,6 +99,17 @@
 				A278842514E4480400D0476B /* GitHubDetector-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A278842E14E4496100D0476B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A278842F14E449E700D0476B /* HKGeek.h */,
+				A278843014E449E700D0476B /* HKGeek.m */,
+				A278843214E44A6400D0476B /* HKCheckIn.h */,
+				A278843314E44A6400D0476B /* HKCheckIn.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +176,8 @@
 			files = (
 				A278842414E4480400D0476B /* main.m in Sources */,
 				A278842814E4480400D0476B /* HKAppDelegate.m in Sources */,
+				A278843114E449E700D0476B /* HKGeek.m in Sources */,
+				A278843414E44A6400D0476B /* HKCheckIn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
