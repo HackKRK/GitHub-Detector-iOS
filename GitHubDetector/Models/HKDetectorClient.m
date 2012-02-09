@@ -42,7 +42,7 @@ static CGFloat defaultRadius = 10.0;
   [self setDefaultHeader: @"X-Token" value: userToken];
 }
 
-- (BOOL) isAutenticated {
+- (BOOL) isAuthenticated {
   if ([userToken length] > 0) {
     return YES;
   } else {
@@ -56,7 +56,7 @@ static CGFloat defaultRadius = 10.0;
   self = [super initWithBaseURL: [NSURL URLWithString: url]];
   if (self) {
     [self loadToken];
-    if ([self isAutenticated]) {
+    if ([self isAuthenticated]) {
       [self setTokenHeader];
     }
   }

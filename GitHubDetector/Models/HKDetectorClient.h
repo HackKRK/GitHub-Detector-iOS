@@ -20,7 +20,7 @@ typedef enum {
 + (HKDetectorClient *) sharedInstance;
 
 - (id) initWithApi: (ApiType) apiType;
-- (BOOL) isAutenticated;
+- (BOOL) isAuthenticated;
 
 - (void) authenticateWithLogin: (NSString *) login
                       password: (NSString *) password
