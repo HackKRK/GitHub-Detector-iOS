@@ -10,7 +10,7 @@
 
 typedef enum {
   RubyApi,
-  JavaApi
+  PythonApi
 } ApiType;
 
 @interface HKDetectorClient : AFHTTPClient {

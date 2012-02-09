@@ -19,7 +19,7 @@ static CGFloat defaultRadius = 10.0;
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;
     dispatch_once(&pred, ^ {
-        _sharedObject = [[self alloc] init];
+        _sharedObject = [[self alloc] initWithApi: PythonApi];
     });
     return _sharedObject;
 }
@@ -27,16 +27,8 @@ static CGFloat defaultRadius = 10.0;
 + (void) initialize {
   apiURLs = [NSDictionary dictionaryWithObjectsAndKeys:
              @"http://api.com", [NSNumber numberWithInt: RubyApi],
-             @"http://api.com", [NSNumber numberWithInt: JavaApi],
+             @"http://10.0.1.51:8000", [NSNumber numberWithInt: PythonApi],
              nil];
-}
-
-+ (HKDetectorClient *) sharedClient {
-  static HKDetectorClient *client;
-  if (!client) {
-    client = [[HKDetectorClient alloc] initWithApi: RubyApi];
-  }
-  return client;
 }
 
 - (void) loadToken {
