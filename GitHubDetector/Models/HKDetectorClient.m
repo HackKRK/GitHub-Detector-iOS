@@ -141,7 +141,7 @@ static CGFloat defaultRadius = 10.0;
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
       NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity: [JSON count]];
       for (NSDictionary *jsonRecord in JSON) {
-        HKCheckIn *checkin = [[HKCheckIn alloc] initFromJSON: jsonRecord];
+        HKCheckIn *checkin = [HKCheckIn checkInFromJSON: jsonRecord];
         [objects addObject: checkin];
       }
       successCallback(objects);
