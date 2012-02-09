@@ -15,7 +15,12 @@
 @synthesize location = _location;
 @synthesize message = _message;
 
-- (NSComparisonResult)compare:(HKCheckIn *)aCheckIn
+- (CLLocationCoordinate2D)coordinate
+{
+    return self.location.coordinate;
+}
+
+- (NSComparisonResult)compareDate:(HKCheckIn *)aCheckIn
 {
     return [self.location.timestamp compare:aCheckIn.location.timestamp];
 }

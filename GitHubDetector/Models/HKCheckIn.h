@@ -17,10 +17,6 @@
 @property (nonatomic, readwrite, strong) CLLocation *location;
 @property (nonatomic, readwrite, strong) NSString *message;
 
-<<<<<<< HEAD
 - (NSComparisonResult)compareDate:(HKCheckIn *)aCheckIn;
-=======
--(CLLocationCoordinate2D) location;
->>>>>>> a679668360d338486931bee66b5b0babeede4b03
 
 @end
