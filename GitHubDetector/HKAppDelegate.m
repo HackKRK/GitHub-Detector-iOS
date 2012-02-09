@@ -8,6 +8,7 @@
 
 #import "HKAppDelegate.h"
 #import "HKLoginViewController.h"
+#import "HKDetectorClient.h"
 
 @implementation HKAppDelegate
 
@@ -16,8 +17,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    HKLoginViewController *loginVC = [[HKLoginViewController alloc] initWithNibName:@"HKLoginView" bundle:nil];
-    self.window.rootViewController = loginVC;
+    if ([HKDetectorClient sharedInstance].isAutenticated)
+    {
+        //
+    }
+    else
+    {
+        HKLoginViewController *loginVC = [[HKLoginViewController alloc] initWithNibName:@"HKLoginView" bundle:nil];
+        self.window.rootViewController = loginVC;
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HKLoginViewController : UIViewController
+@interface HKLoginViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, readwrite, strong) IBOutlet UITextField *loginField;
 @property (nonatomic, readwrite, strong) IBOutlet UITextField *passwordField;
