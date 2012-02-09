@@ -37,9 +37,14 @@ static NSDictionary *apiURLs;
   return client;
 }
 
+- (void) loadToken {
+  if (!userToken) {
+    userToken = [[NSUserDefaults standardUserDefaults] objectForKey: HKDetectorClientAccessToken];
+  }
+}
+
 - (BOOL) isAutenticated {
-  NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:HKDetectorClientAccessToken];
-  if ([token length] > 0) {
+  if ([userToken length] > 0) {
     return YES;
   } else {
     return NO;
@@ -49,7 +54,11 @@ static NSDictionary *apiURLs;
 - (id) initWithApi: (ApiType) apiType {
   NSString *url = [apiURLs objectForKey: [NSNumber numberWithInt: apiType]];
 
-  return [super initWithBaseURL: [NSURL URLWithString: url]];
+  self = [super initWithBaseURL: [NSURL URLWithString: url]];
+  if (self) {
+    [self loadToken];
+  }
+  return self;
 }
 
 - (void) authenticateWithLogin: (NSString *) login
@@ -62,8 +71,8 @@ static NSDictionary *apiURLs;
 
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-      NSString *token = [JSON objectForKey: @"token"];
-      successCallback(token);
+      userToken = [JSON objectForKey: @"token"];
+      successCallback(userToken);
     }
     failure: ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
       failureCallback(error);
@@ -84,7 +93,8 @@ static NSDictionary *apiURLs;
                           text, @"text",
                           nil];
 
-  NSURLRequest *request = [self requestWithMethod: @"POST" path: @"/checkin" parameters: params];
+  NSMutableURLRequest *request = [self requestWithMethod: @"POST" path: @"/checkin" parameters: params];
+  [request addValue: userToken forHTTPHeaderField: @"X-Token"];
 
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {

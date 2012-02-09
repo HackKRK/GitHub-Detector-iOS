@@ -13,7 +13,9 @@ typedef enum {
   JavaApi
 } ApiType;
 
-@interface HKDetectorClient : AFHTTPClient
+@interface HKDetectorClient : AFHTTPClient {
+  NSString *userToken;
+}
 
 + (HKDetectorClient *) sharedInstance;
 
