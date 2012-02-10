@@ -79,13 +79,13 @@
         self.geek = [HKGeek geekFromJSON:json];
         
         // msg
-        self.message = [json objectForKey:@"text"];
+        self.message = HKReadJsonObject([json objectForKey:@"text"]);
         
         // geo
         CLLocationCoordinate2D location;
-        location.latitude = [[json objectForKey:@"lat"] doubleValue];
-        location.longitude = [[json objectForKey:@"lng"] doubleValue];
-        NSDate *timestamp = [[NSDate alloc] initWithTimeIntervalSince1970:[[json objectForKey:@"date"] doubleValue]];
+        location.latitude = [HKReadJsonObject([json objectForKey:@"lat"]) doubleValue];
+        location.longitude = [HKReadJsonObject([json objectForKey:@"lng"]) doubleValue];
+        NSDate *timestamp = [[NSDate alloc] initWithTimeIntervalSince1970:[HKReadJsonObject([json objectForKey:@"date"]) doubleValue]];
         self.location = [[CLLocation alloc] initWithCoordinate:location
                                                       altitude:0
                                             horizontalAccuracy:0

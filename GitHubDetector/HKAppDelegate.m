@@ -18,15 +18,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-<<<<<<< HEAD
-    if ([HKDetectorClient sharedInstance].isAuthenticated)
-=======
     UINavigationController *nacVC = [[UINavigationController alloc] init];
-
-    if ([HKDetectorClient sharedInstance].isAutenticated)
->>>>>>> Map view should now work (in theory :).
+    
+    if ([[HKDetectorClient sharedInstance] isAuthenticated])
     {
-        HKMapViewController *loginVC = [[HKMapViewController alloc] initWithNibName:@"HKLoginView" bundle:nil];
+        HKMapViewController *loginVC = [[HKMapViewController alloc] init];
         [nacVC pushViewController:loginVC animated:NO];
     }
     else
@@ -37,6 +33,7 @@
     
     self.window.rootViewController = nacVC;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -10,6 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
+#define HKReadJsonObject( obj ) (obj) != [NSNull null] ? (obj) : nil
+
 @class HKGeek;
 
 @interface HKCheckIn : NSObject <MKAnnotation> {
