@@ -16,6 +16,7 @@
 @synthesize passwordField = _passwordField;
 @synthesize activityIndicator = _activityIndicator;
 @synthesize spiralBackground = _spiralBackground;
+@synthesize backendTypeSegment = _backendTypeSegment;
 
 - (IBAction)login:(id)sender
 {
