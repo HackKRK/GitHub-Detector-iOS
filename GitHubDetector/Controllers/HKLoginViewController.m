@@ -8,6 +8,7 @@
 
 #import "HKLoginViewController.h"
 #import "HKDetectorClient.h"
+#import "HKMapViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation HKLoginViewController
@@ -25,7 +26,8 @@
     [[HKDetectorClient sharedInstance] authenticateWithLogin:self.loginField.text
                                                     password:self.passwordField.text
                                              successCallback: ^ (NSString *token) {
-                                                 // ..
+                                                 HKMapViewController *mapViewController = [[HKMapViewController alloc] init];
+                                                 [self.navigationController pushViewController:mapViewController animated:YES];
                                              }
                                              failureCallback: ^ (NSError *error) {
                                                  UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Can't login"

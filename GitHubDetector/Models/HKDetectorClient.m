@@ -20,14 +20,14 @@ static CGFloat defaultRadius = 10.0;
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;
     dispatch_once(&pred, ^ {
-        _sharedObject = [[self alloc] initWithApi: PythonApi];
+        _sharedObject = [[self alloc] initWithApi: RubyApi];
     });
     return _sharedObject;
 }
 
 + (void) initialize {
   apiURLs = [NSDictionary dictionaryWithObjectsAndKeys:
-             @"http://api.com", [NSNumber numberWithInt: RubyApi],
+             @"http://quick-and-dirty-backend.heroku.com/", [NSNumber numberWithInt: RubyApi],
              @"http://10.0.1.61:8000", [NSNumber numberWithInt: PythonApi],
              nil];
 }
@@ -66,20 +66,26 @@ static CGFloat defaultRadius = 10.0;
 - (void) authenticateWithLogin: (NSString *) login
                       password: (NSString *) password
                successCallback: (void (^)(NSString *accessToken)) successCallback
-               failureCallback: (void (^)(NSError *error)) failureCallback {
-
-  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: login, @"login", password, @"password", nil];
-  NSMutableURLRequest *request = [self requestWithMethod: @"POST" path: @"/login" parameters: nil];
+               failureCallback: (void (^)(NSError *error)) failureCallback
+{
+  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                          login, @"login",
+                          password, @"password", nil];
+  NSMutableURLRequest *request = [self requestWithMethod: @"POST"
+                                                    path: @"/login"
+                                              parameters: nil];
   [request setHTTPBody: [params JSONData]];
-
+    
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-      userToken = [JSON objectForKey: @"token"];
-      [self setTokenHeader];
-      successCallback(userToken);
+        userToken = [JSON objectForKey: @"token"];
+        [[NSUserDefaults standardUserDefaults] setObject:userToken
+                                                  forKey:HKDetectorClientAccessToken];
+        [self setTokenHeader];
+        successCallback(userToken);
     }
     failure: ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-      failureCallback(error);
+        failureCallback(error);
     }
   ];
   [operation start];
@@ -130,8 +136,8 @@ static CGFloat defaultRadius = 10.0;
              failureCallback: (void (^)(NSError *error)) failureCallback {
 
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          [NSNumber numberWithFloat: latitude], @"latitude",
-                          [NSNumber numberWithFloat: longitude], @"longitude",
+                          [NSNumber numberWithFloat: latitude], @"lat",
+                          [NSNumber numberWithFloat: longitude], @"lng",
                           [NSNumber numberWithFloat: radius], @"radius",
                           nil];
 
@@ -139,6 +145,7 @@ static CGFloat defaultRadius = 10.0;
 
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: request
     success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"%@", JSON);
       NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity: [JSON count]];
       for (NSDictionary *jsonRecord in JSON) {
         HKCheckIn *checkin = [HKCheckIn checkInFromJSON: jsonRecord];

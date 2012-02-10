@@ -9,18 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-
-@class HKCafes;
-
-
 @interface HKMapViewController : UIViewController <MKMapViewDelegate> {
     
 }
-
-
-- (id)initWithCafes:(HKCafes *)cafes;
-
-@property (nonatomic, readwrite, strong) CLLocation *locationToShow;
-
 
 @end

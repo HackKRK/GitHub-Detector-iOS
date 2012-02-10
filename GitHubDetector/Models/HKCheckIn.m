@@ -30,6 +30,16 @@
     return self.location.coordinate;
 }
 
+- (NSString *)title
+{
+    return self.geek.login;
+}
+
+- (NSString *)subtitle
+{
+    return self.message;
+}
+
 + (NSMutableSet *)_checkIns
 {
     static NSMutableSet *checkIns = nil;

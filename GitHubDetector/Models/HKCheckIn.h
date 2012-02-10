@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @class HKGeek;
 
-@interface HKCheckIn : NSObject {
+@interface HKCheckIn : NSObject <MKAnnotation> {
     CLLocationCoordinate2D coordinate;
 }
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *subtitle;
 
 @property (nonatomic, readwrite, strong) HKGeek *geek;
 @property (nonatomic, readwrite, strong) CLLocation *location;

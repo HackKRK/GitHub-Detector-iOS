@@ -8,36 +8,29 @@
 
 #import "HKMapViewController.h"
 #import "HKMapView.h"
-//#import "HKCafes.h"
-
-
+#import "HKAroundMe.h"
 
 @interface HKMapViewController () // Private
-@property (nonatomic, readwrite, strong) HKCafes *cafes;
+@property (nonatomic, readwrite, strong) HKAroundMe *aroundMe;
 @property (nonatomic, readwrite, strong) HKMapView *view;
 @end
 
-
 @implementation HKMapViewController
 
-
-@synthesize cafes = _cafes;
-@synthesize locationToShow = _locationToShow;
-
+@synthesize aroundMe = _aroundMe;
 @dynamic view; // supplied by UIViewController
 
-
-- (id)initWithCafes:(HKCafes *)cafes;
+- (id)init
 {
     if ((self = [super init]))
     {
-        self.cafes = cafes;
+        self.aroundMe = [[HKAroundMe alloc] init];
         self.title = @"Map";
         
-        [self addObserver:self
-               forKeyPath:@"cafes"
-                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
-                  context:NULL];
+        [self.aroundMe addObserver:self
+                        forKeyPath:@"checkIns"
+                           options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
+                           context:NULL];
     }
     return self;
 }
@@ -45,9 +38,19 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-//    [self.view.mapView setCenterCoordinate:self.cafes.myLocation.coordinate
-//                                  animated:YES];
-    [self.view setNeedsDisplay];
+    [self.view.mapView setCenterCoordinate:self.aroundMe.myLocation.coordinate
+                                  animated:YES];
+    
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.1;
+    span.longitudeDelta = 0.1;
+    
+    MKCoordinateRegion region;
+    region.center = self.aroundMe.myLocation.coordinate;
+    region.span = span;
+    
+    [self.view.mapView addAnnotations:self.aroundMe.checkIns];
+    [self.view.mapView setRegion:region animated:YES];
 }
 
 
@@ -60,39 +63,6 @@
     self.view.mapView.delegate = self;
     self.view.mapView.mapType = MKMapTypeStandard;
 }
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    if (self.locationToShow) {
-        MKCoordinateSpan span;
-        span.latitudeDelta = 0.1;
-        span.longitudeDelta = 0.1;
-        
-        MKCoordinateRegion region;
-//        region.center = self.cafes.myLocation.coordinate;
-        region.span = span;
-            
-        [self.view.mapView setRegion:region animated:YES];
-        self.locationToShow = nil;
-        
-    }
-}
-
-//- (void)showCoordinate:(CLLocationCoordinate2D)someCoordinate {
-//    _loaded = YES;
-//    
-//    MKCoordinateSpan span;
-//    span.latitudeDelta = 0.1;
-//    span.longitudeDelta = 0.1;
-//    
-//    MKCoordinateRegion region;
-//    region.center = someCoordinate;
-//    region.span = span;
-//    
-//    [self.view.mapView setRegion:region animated:YES];
-//}
 
 #pragma mark -
 #pragma mark <MKMapViewDelegate>

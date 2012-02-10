@@ -16,6 +16,7 @@
 		80A7823114E455B10008E31D /* HKCompassGeekPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823014E455B10008E31D /* HKCompassGeekPoint.m */; };
 		80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823414E4560E0008E31D /* HKCompassViewController.m */; };
 		A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B50F414E45810009C0BB0 /* HKDetectorClient.m */; };
+		A274963714E4951200BD23C0 /* HKAroundMe.m in Sources */ = {isa = PBXBuildFile; fileRef = A274963614E4951200BD23C0 /* HKAroundMe.m */; };
 		A278841814E4480400D0476B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841714E4480400D0476B /* UIKit.framework */; };
 		A278841A14E4480400D0476B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841914E4480400D0476B /* Foundation.framework */; };
 		A278841C14E4480400D0476B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841B14E4480400D0476B /* CoreGraphics.framework */; };
@@ -58,6 +59,8 @@
 		80A7823414E4560E0008E31D /* HKCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKCompassViewController.m; path = Controllers/HKCompassViewController.m; sourceTree = "<group>"; };
 		A20B50F314E45810009C0BB0 /* HKDetectorClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKDetectorClient.h; path = Models/HKDetectorClient.h; sourceTree = "<group>"; };
 		A20B50F414E45810009C0BB0 /* HKDetectorClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKDetectorClient.m; path = Models/HKDetectorClient.m; sourceTree = "<group>"; };
+		A274963514E4951200BD23C0 /* HKAroundMe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKAroundMe.h; path = Models/HKAroundMe.h; sourceTree = "<group>"; };
+		A274963614E4951200BD23C0 /* HKAroundMe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKAroundMe.m; path = Models/HKAroundMe.m; sourceTree = "<group>"; };
 		A278841314E4480400D0476B /* GitHubDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A278841714E4480400D0476B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A278841914E4480400D0476B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -186,6 +189,8 @@
 				A278843314E44A6400D0476B /* HKCheckIn.m */,
 				A20B50F314E45810009C0BB0 /* HKDetectorClient.h */,
 				A20B50F414E45810009C0BB0 /* HKDetectorClient.m */,
+				A274963514E4951200BD23C0 /* HKAroundMe.h */,
+				A274963614E4951200BD23C0 /* HKAroundMe.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */,
 				A2DE6C9614E4928C00353664 /* HKMapView.m in Sources */,
 				A2DE6C9A14E492B000353664 /* HKMapViewController.m in Sources */,
+				A274963714E4951200BD23C0 /* HKAroundMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +386,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Blazej Biesiada (B8NS5HZ6AN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -395,6 +402,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "BA1CE01C-54CB-4C59-A096-C144EE1736A2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -406,6 +414,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Blazej Biesiada (B8NS5HZ6AN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -415,6 +424,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "BA1CE01C-54CB-4C59-A096-C144EE1736A2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
