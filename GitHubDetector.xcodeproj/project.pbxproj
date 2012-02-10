@@ -14,6 +14,8 @@
 		80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823414E4560E0008E31D /* HKCompassViewController.m */; };
 		95A6B88814E48A3F00752178 /* spiral.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A6B88714E48A3F00752178 /* spiral.png */; };
 		95A6B88A14E4914100752178 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6B88914E4914000752178 /* QuartzCore.framework */; };
+		80A7823114E455B10008E31D /* HKCompassGeekPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823014E455B10008E31D /* HKCompassGeekPoint.m */; };
+		80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A7823414E4560E0008E31D /* HKCompassViewController.m */; };
 		A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B50F414E45810009C0BB0 /* HKDetectorClient.m */; };
 		A278841814E4480400D0476B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841714E4480400D0476B /* UIKit.framework */; };
 		A278841A14E4480400D0476B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A278841914E4480400D0476B /* Foundation.framework */; };
@@ -51,6 +53,10 @@
 		80A7823414E4560E0008E31D /* HKCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKCompassViewController.m; path = Controllers/HKCompassViewController.m; sourceTree = "<group>"; };
 		95A6B88714E48A3F00752178 /* spiral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spiral.png; sourceTree = "<group>"; };
 		95A6B88914E4914000752178 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		80A7822F14E455B10008E31D /* HKCompassGeekPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; path = HKCompassGeekPoint.h; sourceTree = "<group>"; };
+		80A7823014E455B10008E31D /* HKCompassGeekPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKCompassGeekPoint.m; sourceTree = "<group>"; };
+		80A7823314E4560E0008E31D /* HKCompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKCompassViewController.h; path = Controllers/HKCompassViewController.h; sourceTree = "<group>"; };
+		80A7823414E4560E0008E31D /* HKCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKCompassViewController.m; path = Controllers/HKCompassViewController.m; sourceTree = "<group>"; };
 		A20B50F314E45810009C0BB0 /* HKDetectorClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKDetectorClient.h; path = Models/HKDetectorClient.h; sourceTree = "<group>"; };
 		A20B50F414E45810009C0BB0 /* HKDetectorClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKDetectorClient.m; path = Models/HKDetectorClient.m; sourceTree = "<group>"; };
 		A278841314E4480400D0476B /* GitHubDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,8 +190,8 @@
 		A278843714E44BC600D0476B /* extern */ = {
 			isa = PBXGroup;
 			children = (
-				80A7822F14E455B10008E31D /* GeoCoordinate.h */,
-				80A7823014E455B10008E31D /* GeoCoordinate.m */,
+				80A7822F14E455B10008E31D /* HKCompassGeekPoint.h */,
+				80A7823014E455B10008E31D /* HKCompassGeekPoint.m */,
 				A278845614E44D3200D0476B /* JSONKit */,
 				A278843814E44CB400D0476B /* AFNetworking */,
 			);
@@ -343,7 +349,7 @@
 				52D2B34014E4527A00855A1F /* MapViewController.m in Sources */,
 				80A7822614E451B50008E31D /* HKCompassGeekView.m in Sources */,
 				A20B50F514E45810009C0BB0 /* HKDetectorClient.m in Sources */,
-				80A7823114E455B10008E31D /* GeoCoordinate.m in Sources */,
+				80A7823114E455B10008E31D /* HKCompassGeekPoint.m in Sources */,
 				80A7823514E4560E0008E31D /* HKCompassViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
