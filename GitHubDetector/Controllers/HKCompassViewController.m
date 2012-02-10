@@ -13,7 +13,7 @@
 #import "HKCompassGeekView.h"
 #import <QuartzCore/QuartzCore.h>
 
-NSComparisonResult AngleSortASC(GeoCoordinate *s1, GeoCoordinate *s2, void *ignore);
+NSComparisonResult AngleSortASC(HKCompassGeekPoint *s1, HKCompassGeekPoint *s2, void *ignore);
 
 @interface HKCompassViewController()
 @property (nonatomic, readwrite, strong) UIView * pointsContainer;      /**< transparent view that is a container for geek views*/
@@ -122,7 +122,6 @@ NSComparisonResult AngleSortASC(GeoCoordinate *s1, GeoCoordinate *s2, void *igno
 
 
 #pragma mark CLLocationManager Delegate Methods
-NSComparisonResult AngleSortASC(HKCompassGeekPoint *s1, HKCompassGeekPoint *s2, void *ignore);
 NSComparisonResult AngleSortASC(HKCompassGeekPoint *s1, HKCompassGeekPoint *s2, void *ignore) {
     if (s1.azimuth < s2.azimuth) {
 		return NSOrderedAscending;
