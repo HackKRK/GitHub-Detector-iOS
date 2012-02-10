@@ -13,6 +13,7 @@
 @property (nonatomic, readwrite, strong) IBOutlet UITextField *loginField;
 @property (nonatomic, readwrite, strong) IBOutlet UITextField *passwordField;
 @property (nonatomic, readwrite, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, readwrite, strong) IBOutlet UISegmentedControl *backendTypeSegment;
 
 @property (strong, nonatomic) IBOutlet UIImageView *spiralBackground;
 
